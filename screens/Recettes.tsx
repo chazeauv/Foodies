@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         width: Dimensions.get("window").width,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 350,
+        marginTop: 400,
     },
     sectionTitle: {
         fontSize: 24,

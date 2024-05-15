@@ -20,15 +20,23 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import Home from './screens/Home';
 import Recettes from './screens/Recettes';
+// import { LinearGradient } from 'expo-linear-gradient';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
 
   return (
     <NavigationContainer>
+      {/* <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            top: 0,
+            height: '100%'
+          }} /> */}
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Recettes" component={Recettes} />
+        <Stack.Screen name="Home" component={Home} options={{ headerTransparent: true }}/>
+        <Stack.Screen name="Recettes" component={Recettes} options={{ headerTransparent: true }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

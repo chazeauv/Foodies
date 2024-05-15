@@ -1,21 +1,39 @@
 import React, { PropsWithChildren } from "react";
 import { SafeAreaView, StatusBar, ScrollView, View, Text, Button, StyleSheet, Dimensions } from "react-native";
+import LinearGradient from 'react-native-linear-gradient';
+import { useHeaderHeight } from '@react-navigation/elements';
 
 const Home = ({navigation}: PropsWithChildren<any>) => {
     return (
-        <SafeAreaView>
+        <ScreenTemplate headerPadding={true}>
+            <SafeAreaView>
             <StatusBar barStyle="dark-content" />
             <View
                 
                 style={styles.sectionContainer}>
-                <View style={styles.card}>
+                <View>
                     <Text style={styles.sectionTitle}>HELLO !</Text>
                     <Button title="Voir les recettes" onPress={() => navigation.navigate("Recettes")}/>
                 </View>
             </View>
         </SafeAreaView>
+        </ScreenTemplate>
     );
 };
+
+const ScreenTemplate = ({ children, headerPadding }: { children: React.ReactNode, headerPadding: boolean }) => {
+    //useHeaderHeight is a hook that gives you the height of the header
+    const headerHeight = useHeaderHeight();
+     
+    return (
+    <LinearGradient 
+    colors={['#5A0003', '#360000', '#7A0000']}
+    style={{ flex: 1, paddingTop: headerPadding ? headerHeight : 0 }}
+    >
+     {children}
+    </LinearGradient>
+    )
+  }
 
 const styles = StyleSheet.create({
     sectionContainer: {
@@ -24,7 +42,7 @@ const styles = StyleSheet.create({
         width: Dimensions.get("window").width,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 350,
+        marginTop: 400,
     },
     sectionTitle: {
         fontSize: 24,
