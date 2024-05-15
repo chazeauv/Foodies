@@ -8,10 +8,8 @@ const Home = ({navigation}: PropsWithChildren<any>) => {
         <ScreenTemplate headerPadding={true}>
             <SafeAreaView>
             <StatusBar barStyle="dark-content" />
-            <View
-                
-                style={styles.sectionContainer}>
-                <View>
+            <View style={styles.sectionContainer}>
+                <View style={styles.card}>
                     <Text style={styles.sectionTitle}>HELLO !</Text>
                     <Button title="Voir les recettes" onPress={() => navigation.navigate("Recettes")}/>
                 </View>
@@ -27,7 +25,7 @@ const ScreenTemplate = ({ children, headerPadding }: { children: React.ReactNode
      
     return (
     <LinearGradient 
-    colors={['#5A0003', '#360000', '#7A0000']}
+    colors={['#f5f7fa', '#c3cfe2']}
     style={{ flex: 1, paddingTop: headerPadding ? headerHeight : 0 }}
     >
      {children}
@@ -42,7 +40,7 @@ const styles = StyleSheet.create({
         width: Dimensions.get("window").width,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 400,
+        marginTop: 350,
     },
     sectionTitle: {
         fontSize: 24,
@@ -74,13 +72,7 @@ const styles = StyleSheet.create({
         shadowRadius: 3,
     },
     card: {
-        backgroundColor: 'white',
         padding: 16,
-        shadowColor: 'black',
-        shadowOffset: {
-            width: 0,
-            height: 4,
-        },
         shadowOpacity: 0.3,
         shadowRadius: 6,
         elevation: 14,

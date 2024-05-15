@@ -24,11 +24,12 @@ const styles = StyleSheet.create({
         width: Dimensions.get("window").width,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 400,
+        marginTop: 350,
     },
     sectionTitle: {
         fontSize: 24,
         fontWeight: '600',
+        marginBottom: 20,
     },
     sectionDescription: {
         marginTop: 8,
@@ -55,13 +56,7 @@ const styles = StyleSheet.create({
         shadowRadius: 3,
     },
     card: {
-        backgroundColor: 'white',
         padding: 16,
-        shadowColor: 'black',
-        shadowOffset: {
-            width: 0,
-            height: 4,
-        },
         shadowOpacity: 0.3,
         shadowRadius: 6,
         elevation: 14,
