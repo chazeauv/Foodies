@@ -3,10 +3,11 @@ import { SafeAreaView, ScrollView, View, Text, Dimensions, StyleSheet, Button, S
 import LinearGradient from 'react-native-linear-gradient';
 import { useHeaderHeight } from '@react-navigation/elements';
 import global from '../style/global';
+import GradientTemplate from "../style/GradientTemplate";
 
-const Recettes = ({navigation}: PropsWithChildren<any>) => {
+const Cocktails = ({navigation}: PropsWithChildren<any>) => {
     return (
-        <ScreenTemplate headerPadding={true}>
+        <GradientTemplate headerPadding={true}>
             <SafeAreaView>
                 <StatusBar barStyle="dark-content" />
                 <View
@@ -17,22 +18,8 @@ const Recettes = ({navigation}: PropsWithChildren<any>) => {
                     </View>
                 </View>
             </SafeAreaView>
-        </ScreenTemplate>
+        </GradientTemplate>
     );
 };
 
-const ScreenTemplate = ({ children, headerPadding }: { children: React.ReactNode, headerPadding: boolean }) => {
-    //useHeaderHeight is a hook that gives you the height of the header
-    const headerHeight = useHeaderHeight();
-    
-    return (
-    <LinearGradient 
-    colors={['#f5f7fa', '#c3cfe2']}
-    style={{ flex: 1, paddingTop: headerPadding ? headerHeight : 0 }}
-    >
-        {children}
-    </LinearGradient>
-    )
-}
-
-export default Recettes;
+export default Cocktails;

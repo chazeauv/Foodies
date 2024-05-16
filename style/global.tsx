@@ -39,7 +39,8 @@ export default StyleSheet.create({
         shadowRadius: 3,
     },
     card: {
-        backgroundColor: 'rgba(0,0,0,0)',
+        backgroundColor: 'rgba(1,1,1,0)',
+        borderRadius: 20,
         padding: 16,
         shadowColor: 'black',
         shadowOffset: {
@@ -49,8 +50,8 @@ export default StyleSheet.create({
         shadowOpacity: 0.3,
         shadowRadius: 6,
         elevation: 14,
-        width: Dimensions.get("window").width - 20,
-        height: Dimensions.get("window").height - 100,
+        width: Dimensions.get("window").width - 40,
+        height: Dimensions.get("window").height - 180,
         justifyContent: 'center',
         alignItems: 'center',
     },

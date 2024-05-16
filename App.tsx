@@ -19,7 +19,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Home from './screens/Home';
-import Recettes from './screens/Recettes';
+import Cocktails from './screens/Cocktails';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const App = () => {
@@ -35,8 +35,8 @@ const App = () => {
             height: '100%'
           }} />
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name="Home" component={Home} options={{ headerTransparent: true }}/>
-        <Stack.Screen name="Recettes" component={Recettes} options={{ headerTransparent: true }}/>
+        <Stack.Screen name="HOME" component={Home} options={{ headerTransparent: true }}/>
+        <Stack.Screen name="COCKTAILS" component={Cocktails} options={{ headerTransparent: true }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
