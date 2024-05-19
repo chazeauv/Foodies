@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/RedditMono-Light.ttf",
+      "sha1": "b50ea845923a5181d6e90f7c2dd9da545f70db9a"
+    },
+    {
+      "path": "assets/fonts/RedditMono-Regular.ttf",
+      "sha1": "b82374ddd6f128c2a7c63d25c8eb84edb105c61b"
+    }
+  ]
+}

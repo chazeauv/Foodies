@@ -27,19 +27,24 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={{
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            top: 0,
-            height: '100%'
-          }} />
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name="HOME" component={Home} options={{ headerTransparent: true }}/>
-        <Stack.Screen name="COCKTAILS" component={Cocktails} options={{ headerTransparent: true }}/>
+        <Stack.Screen name="HOME" component={Home} options={{ title: '', headerTransparent: true, headerTintColor: '#fff', animation: 'ios' }}/>
+        <Stack.Screen name="COCKTAILS" component={Cocktails} options={{ title: '', headerTransparent: true, headerTintColor: '#fff', animation: 'ios' }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
+};
+
+const config = {
+  animation: 'spring',
+  config: {
+      stiffness: 1000,
+      damping: 500,
+      mass: 3,
+      overshootClamping: true,
+      restDisplacementThreshold: 0.01,
+      restSpeedThreshold: 0.01,
+  },
 };
 
 export default App;

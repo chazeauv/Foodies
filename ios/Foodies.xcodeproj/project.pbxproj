@@ -14,6 +14,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-Foodies-FoodiesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Foodies-FoodiesTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		EC7F89F8C67B445E842F4659 /* RedditMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5AA38B919C34F3EBE053841 /* RedditMono-Light.ttf */; };
+		AE49124CFDDB451C8C157D97 /* RedditMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C04A6BD5D7CE4694A4A44EAB /* RedditMono-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Foodies/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Foodies-FoodiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodies-FoodiesTests.release.xcconfig"; path = "Target Support Files/Pods-Foodies-FoodiesTests/Pods-Foodies-FoodiesTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		E5AA38B919C34F3EBE053841 /* RedditMono-Light.ttf */ = {isa = PBXFileReference; name = "RedditMono-Light.ttf"; path = "../assets/fonts/RedditMono-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C04A6BD5D7CE4694A4A44EAB /* RedditMono-Regular.ttf */ = {isa = PBXFileReference; name = "RedditMono-Regular.ttf"; path = "../assets/fonts/RedditMono-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				72BB2D1FC8C14EDB8BFD4283 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -149,6 +154,16 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		72BB2D1FC8C14EDB8BFD4283 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				E5AA38B919C34F3EBE053841 /* RedditMono-Light.ttf */,
+				C04A6BD5D7CE4694A4A44EAB /* RedditMono-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +260,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				EC7F89F8C67B445E842F4659 /* RedditMono-Light.ttf in Resources */,
+				AE49124CFDDB451C8C157D97 /* RedditMono-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
