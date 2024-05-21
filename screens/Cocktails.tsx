@@ -9,24 +9,29 @@ const Cocktails = ({navigation}: PropsWithChildren<any>) => {
     const [text, onChangeText] = useState('');
 
     return (
-        <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : -300} style={global.sectionContainer}>
-            <StatusBar barStyle="default"/>
-                <View style={global.card}>
-                    <View style={global.cardContent}>
-                        <Image style={global.mainImg} source={ require('../assets/images/lemonWater.jpg') }/>
-                        <View style={global.mainTitleContainer}>
-                            <Text style={global.mainTitle}>The </Text>
-                            <Text style={global.mainTitle}>Mixologist</Text>
+        <GradientTemplate headerPadding={true}>
+            <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : -300} style={global.sectionContainer}>
+                <StatusBar barStyle="default"/>
+                    <View style={global.card}>
+                        <View style={global.cardContent}>
+                            <Image blurRadius={2} style={global.mainImg} source={ require('../assets/images/lemonWater.jpg') }/>
+                            {
+                                Platform.OS === 'ios' ?
+                                <View style={global.mainTitleContainer}>
+                                    <Text style={global.mainTitle}>The </Text>
+                                    <Text style={global.mainTitle}>Mixologist</Text>
+                                </View> : null
+                            }
+                            <TextInput
+                                style={[global.text, global.input, styles.input]}
+                                onChangeText={onChangeText}
+                                value={text}
+                                placeholder="Rechercher un cocktail"
+                            />
                         </View>
-                        <TextInput
-                            style={[global.text, global.input, styles.input]}
-                            onChangeText={onChangeText}
-                            value={text}
-                            placeholder="Rechercher un cocktail"
-                        />
                     </View>
-                </View>
-        </KeyboardAvoidingView>
+            </KeyboardAvoidingView>
+        </GradientTemplate>
     );
 };
 

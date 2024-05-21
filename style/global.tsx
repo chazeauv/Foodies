@@ -17,11 +17,11 @@ export default StyleSheet.create({
     mainTitle: {
         fontFamily: 'Reddit Mono',
         fontSize: 60,
-        fontWeight: '400',
+        fontWeight: 'bold',
         color: 'white',
     },
     sectionContainer: {
-        backgroundColor: 'rgba(0,0,0,1)',
+        // backgroundColor: 'rgba(0,0,0,1)',
         flex: 1,
         height: height,
         width: width,

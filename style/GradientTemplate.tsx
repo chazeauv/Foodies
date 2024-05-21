@@ -7,7 +7,7 @@ const GradientTemplate = ({ children, headerPadding }: { children: React.ReactNo
     
     return (
     <LinearGradient 
-    colors={['#ffda0a', '#ffe747']}
+    colors={['#000000', '#000000', '#24243e']}
     style={{ flex: 1, paddingTop: headerPadding ? headerHeight : 0 }}
     >
         {children}

@@ -10,11 +10,12 @@ const Home = ({navigation}: PropsWithChildren<any>) => {
     const gitUrl = 'https://github.com/chazeauv';
 
     return (
+        <GradientTemplate headerPadding={true}>
             <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0} style={global.sectionContainer}>
                 <StatusBar barStyle="default"/>
                 <View style={global.card}>
                     <View style={global.cardContent}>
-                        <Image style={global.mainImg} source={ require('../assets/images/lemonWater.jpg') }/>
+                        <Image blurRadius={2} style={global.mainImg} source={ require('../assets/images/lemonWater.jpg') }/>
                         <View style={global.mainTitleContainer}>
                             <Text style={global.mainTitle}>The</Text>
                             <Text style={global.mainTitle}>Mixologist</Text>
@@ -32,6 +33,7 @@ const Home = ({navigation}: PropsWithChildren<any>) => {
                     </View>
                 </View>
             </KeyboardAvoidingView>
+        </GradientTemplate>
     );
 };
 
