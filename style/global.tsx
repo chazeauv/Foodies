@@ -10,13 +10,13 @@ const verticalOffset = 100;
 export default StyleSheet.create({
     mainTitleContainer: {
         position: 'absolute',
-        top: 160,
+        top: 256,
         justifyContent: 'center',
         width: Dimensions.get("window").width - 16,
     },
     mainTitle: {
         fontFamily: 'Reddit Mono',
-        fontSize: 60,
+        fontSize: 48,
         fontWeight: 'bold',
         color: 'white',
     },
@@ -80,10 +80,8 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         paddingVertical: 12,
-        paddingHorizontal: 32,
+        paddingHorizontal: 24,
         borderRadius: 32,
-        elevation: 3,
-        width: width - 16,
         backgroundColor: 'transparent',
     },
     text: {
@@ -101,13 +99,12 @@ export default StyleSheet.create({
         paddingVertical: 12,
         paddingHorizontal: 32,
         borderRadius: 32,
-        elevation: 3
     },
     mainImg: {
         position: 'absolute',
-        top: -300,
-        transform: [{ rotate: '-10deg' }, { translateX: 50 }],
-        height: 600,
+        top: -100,
+        height: height + 100,
         resizeMode: 'contain',
+        opacity: 0.5,
     },
 });

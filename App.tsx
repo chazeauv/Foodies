@@ -18,8 +18,8 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import Home from './screens/Home';
-import Cocktails from './screens/Cocktails';
+import Home from './components/Home';
+import Cocktails from './components/Cocktails';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const App = () => {
