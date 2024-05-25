@@ -1,5 +1,5 @@
-# EN
-## ~~Foodies~~ The Mixologist - a React Native project
+# Description
+## (EN) ~~Foodies~~ The Mixologist - a React Native project
 
 Hello !
 
@@ -8,9 +8,7 @@ Using [TheCocktailDB API](https://www.thecocktaildb.com/api.php), the goal is to
 
 Project realized in the context of 1st year of MIAGE Master degree, IM2AG, Grenoble Alpes University.
 
-# FR
-
-## ~~Foodies~~ The Mixologist - un projet React Native
+## (FR) ~~Foodies~~ The Mixologist - un projet React Native
 
 Bonjour ! 
 
