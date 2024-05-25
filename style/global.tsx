@@ -3,14 +3,11 @@ import { Dimensions, StyleSheet } from "react-native";
 const dimensions = Dimensions.get("window");
 const height = dimensions.height;
 const width = dimensions.width;
-const frequency = 2;
-const amplitude = 10;
-const verticalOffset = 100;
 
 export default StyleSheet.create({
     mainTitleContainer: {
         position: 'absolute',
-        top: 256,
+        top: 300,
         justifyContent: 'center',
         width: Dimensions.get("window").width - 16,
     },
@@ -21,13 +18,12 @@ export default StyleSheet.create({
         color: 'white',
     },
     sectionContainer: {
-        // backgroundColor: 'rgba(0,0,0,1)',
+        backgroundColor: 'transparent',
         flex: 1,
         height: height,
         width: width,
         justifyContent: 'center',
         alignItems: 'center',
-        // marginTop: 0,
         color: 'white',
     },
     sectionTitle: {
@@ -49,32 +45,16 @@ export default StyleSheet.create({
     },
     card: {
         borderRadius: 20,
-        // borderColor: 'white',
-        // borderWidth: 2,
         color: 'white',
-        // padding: 16,
-        // shadowColor: 'black',
-        // shadowOffset: {
-        //     width: 0,
-        //     height: 4,
-        // },
-        // shadowOpacity: 0.3,
-        // shadowRadius: 6,
-        // elevation: 1,
         width: width,
-        height: height - 69,
-        // overflow: 'hidden'
+        height: height
     },
     cardContent: {
-        // padding: 16,
-        // backgroundColor: 'transparent',
-        color: 'white',
         borderRadius: 20,
         width: '100%',
         height: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        // overflow: 'hidden'
     },
     button: {
         alignItems: 'center',

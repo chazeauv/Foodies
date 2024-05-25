@@ -1,39 +1,50 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
-  Text,
-  View,
-  Dimensions,
-  Button,
+  ImageBackground,
 } from 'react-native';
 
-import { NavigationContainer } from '@react-navigation/native';
+import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import {
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 import Home from './components/Home';
 import Cocktails from './components/Cocktails';
-import { LinearGradient } from 'expo-linear-gradient';
+import GradientTemplate from './style/GradientTemplate';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name="HOME" component={Home} options={{ title: '', headerTransparent: true, headerTintColor: '#fff', animation: 'ios' }}/>
-        <Stack.Screen name="COCKTAILS" component={Cocktails} options={{ title: '', headerTransparent: true, headerTintColor: '#fff', animation: 'ios' }}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ImageBackground blurRadius={0.5} style={styles.mainImg} source={require('./assets/images/cocktailsBg2.jpg')}>
+      <GradientTemplate headerPadding={true}>
+      <NavigationContainer theme={navTheme}>
+        <Stack.Navigator initialRouteName='Home'>
+          <Stack.Screen name="HOME" component={Home} options={{ title: '', headerTransparent: true, headerTintColor: '#fff', animation: 'ios' }} />
+          <Stack.Screen name="COCKTAILS" component={Cocktails} options={{ title: '', headerTransparent: true, headerTintColor: '#fff', animation: 'ios' }} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      </GradientTemplate>
+    </ImageBackground>
   );
 };
+
+const navTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: 'transparent',
+  },
+};
+
+const styles = StyleSheet.create({
+  mainImg: {
+    width: '100%',
+    position: 'absolute',
+    height: '100%',
+    resizeMode: 'contain',
+    opacity: 1,
+  }
+});
 
 const config = {
   animation: 'spring',

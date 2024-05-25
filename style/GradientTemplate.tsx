@@ -1,14 +1,11 @@
 import LinearGradient from 'react-native-linear-gradient';
-import { useHeaderHeight } from '@react-navigation/elements';
 
 const GradientTemplate = ({ children, headerPadding }: { children: React.ReactNode, headerPadding: boolean }) => {
-    //useHeaderHeight is a hook that gives you the height of the header
-    const headerHeight = useHeaderHeight();
     
     return (
     <LinearGradient 
-    colors={['#000000', '#000000', '#24243e']}
-    style={{ flex: 1, paddingTop: headerPadding ? headerHeight : 0 }}
+    colors={['#000000aa', '#00000088', '#24243e88']}
+    style={{ flex: 1, paddingTop: headerPadding ? 0 : 0 }}
     >
         {children}
     </LinearGradient>

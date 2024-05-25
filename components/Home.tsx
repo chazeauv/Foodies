@@ -1,21 +1,15 @@
-import React, { PropsWithChildren, useCallback, useState } from "react";
-import { SafeAreaView, StatusBar, ScrollView, View, Text, Button, StyleSheet, Dimensions, Pressable, Image, TextInput, KeyboardAvoidingView, Platform, Alert, Linking } from "react-native";
+import React, { PropsWithChildren, useCallback } from "react";
+import { StatusBar, View, Text, StyleSheet, Dimensions, Image, KeyboardAvoidingView, Platform, Alert, Linking } from "react-native";
 import global from '../style/global';
-import GradientTemplate from "../style/GradientTemplate";
-import { BlurView } from "expo-blur";
-import LinearGradient from "react-native-linear-gradient";
 
 const Home = ({navigation}: PropsWithChildren<any>) => {
-    const [text, onChangeText] = useState('');
-    const gitUrl = 'https://github.com/chazeauv';
+    const gitUrl = 'https://github.com/';
 
     return (
-        <GradientTemplate headerPadding={true}>
             <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0} style={global.sectionContainer}>
                 <StatusBar barStyle="light-content"/>
                 <View style={global.card}>
                     <View style={global.cardContent}>
-                        <Image blurRadius={0.5} style={global.mainImg} source={ require('../assets/images/cocktailsBg2.jpg') }/>
                         <View style={global.mainTitleContainer}>
                             <Text style={global.mainTitle}>THE</Text>
                             <Text style={global.mainTitle}>MIXOLOGIST</Text>
@@ -30,18 +24,14 @@ const Home = ({navigation}: PropsWithChildren<any>) => {
                     </View>
                 </View>
             </KeyboardAvoidingView>
-        </GradientTemplate>
     );
 };
 
 const OpenURLButton = ({url}: OpenURLButtonProps) => {
     const handlePress = useCallback(async () => {
-      // Checking if the link is supported for links with custom URL scheme.
     const supported = await Linking.canOpenURL(url);
     
     if (supported) {
-        // Opening the link with some app, if the URL scheme is "http" the web link should be opened
-        // by some browser in the mobile
         await Linking.openURL(url);
     } else {
         Alert.alert(`Don't know how to open this URL: ${url}`);
@@ -49,13 +39,10 @@ const OpenURLButton = ({url}: OpenURLButtonProps) => {
     }, [url]);
 
     return (
-        <View
-        style={[global.button, styles.gitBtn]}
-        >
-            {/* <Text style={[global.text, styles.gitTxt]} onPress={handlePress}></Text> */}
+        <View style={[global.button, styles.gitBtn]}>
             <Image style={styles.gitImg} source={ require('../assets/images/gitLogo.png') }/>
         </View>
-);
+    );
 };
 
 type OpenURLButtonProps = {
@@ -81,6 +68,10 @@ const styles = StyleSheet.create({
     },
     ctBtn: {
         backgroundColor: 'white',
+        flex: 10,
+    },
+    ctBtnDark: {
+        backgroundColor: '#ddd',
         flex: 10,
     },
     ctTxt: {
