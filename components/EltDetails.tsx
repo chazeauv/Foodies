@@ -5,9 +5,10 @@ const EltDetails = () => {
 
     return (
         <View>
-            <Text>Compositions: ...</Text>
+            <Text>Alcoolisé: ...</Text>
+            <Text>Composition: ...</Text>
             <Text>Instructions: ...</Text>
-            <Text>Autre: ...</Text>
+            <Text>Verre recommandé: ...</Text>
         </View>
     );
 }

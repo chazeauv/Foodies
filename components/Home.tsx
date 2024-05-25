@@ -3,7 +3,7 @@ import { StatusBar, View, Text, StyleSheet, Dimensions, Image, KeyboardAvoidingV
 import global from '../style/global';
 
 const Home = ({navigation}: PropsWithChildren<any>) => {
-    const gitUrl = 'https://github.com/';
+    const gitUrl = 'https://github.com/chazeauv/Foodies';
 
     return (
             <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0} style={global.sectionContainer}>
