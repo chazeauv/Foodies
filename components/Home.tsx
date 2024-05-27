@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, useCallback } from "react";
-import { StatusBar, View, Text, StyleSheet, Dimensions, Image, KeyboardAvoidingView, Platform, Alert, Linking } from "react-native";
+import { StatusBar, View, Text, StyleSheet, Dimensions, Image, KeyboardAvoidingView, Platform, Alert, Linking, TouchableOpacity } from "react-native";
 import global from '../style/global';
 
 const Home = ({navigation}: PropsWithChildren<any>) => {
@@ -16,9 +16,9 @@ const Home = ({navigation}: PropsWithChildren<any>) => {
                             <Text style={styles.mainDesc}>Trouves un cocktail. Concocte-le.</Text>
                         </View>
                         <View style={styles.buttons}>
-                            <View style={[global.button, styles.ctBtn]}>
-                                <Text style={[global.text, styles.ctTxt]} onPress={() => navigation.navigate("COCKTAILS")}>VOIR LES COCKTAILS</Text>
-                            </View>
+                            <TouchableOpacity style={[global.button, styles.ctBtn]} onPress={() => navigation.navigate("COCKTAILS")}>
+                                <Text style={[global.text, styles.ctTxt]}>VOIR LES COCKTAILS</Text>
+                            </TouchableOpacity>
                             <OpenURLButton url={gitUrl}/>
                         </View>
                     </View>
@@ -28,20 +28,20 @@ const Home = ({navigation}: PropsWithChildren<any>) => {
 };
 
 const OpenURLButton = ({url}: OpenURLButtonProps) => {
-    const handlePress = useCallback(async () => {
-    const supported = await Linking.canOpenURL(url);
-    
-    if (supported) {
-        await Linking.openURL(url);
-    } else {
-        Alert.alert(`Don't know how to open this URL: ${url}`);
-    }
-    }, [url]);
+    const handlePress = async () => {
+        const supported = await Linking.canOpenURL(url);
+        
+        if (supported) {
+            Linking.openURL(url);
+        } else {
+            Alert.alert('Impossible d\'ouvrir le lien');
+        }
+    };
 
     return (
-        <View style={[global.button, styles.gitBtn]}>
+        <TouchableOpacity style={[global.button, styles.gitBtn]} onPress={handlePress}>
             <Image style={styles.gitImg} source={ require('../assets/images/gitLogo.png') }/>
-        </View>
+        </TouchableOpacity>
     );
 };
 

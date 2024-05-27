@@ -12,10 +12,10 @@ const Cocktails = ({navigation}: PropsWithChildren<any>) => {
                 <StatusBar barStyle="light-content"/>
                     <View style={global.card}>
                         <View style={global.cardContent}>
-                            <View style={global.mainTitleContainer}>
-                            <Text style={global.mainTitle}>THE</Text>
-                            <Text style={global.mainTitle}>MIXOLOGIST</Text>
-                            </View>
+                            {!inSearch && <View style={global.mainTitleContainer}>
+                                <Text style={global.mainTitle}>THE</Text>
+                                <Text style={global.mainTitle}>MIXOLOGIST</Text>
+                            </View>}
                             <TextInput
                                 style={[global.text, global.input, styles.input]}
                                 onChangeText={onChangeText}

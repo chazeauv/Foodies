@@ -1,4 +1,4 @@
-import { Dimensions, Image, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, useWindowDimensions } from 'react-native';
 import global from '../style/global';
 import { useState } from 'react';
 import EltDetails from './EltDetails';
@@ -12,9 +12,9 @@ const ListElt = ({cktName}: {cktName: string}) => {
                 <Image style={styles.img} source={ require('../assets/images/cocktailsBg.jpg') }/>
                 <View style={styles.desc}>
                     <Text style={styles.descText}>{cktName}</Text>
-                    <View style={[global.button, styles.dtBtn]}>
-                        <Text style={[global.text, styles.dtText]} onPress={() => {showDetails(!inDetails)}}>DETAILS</Text>
-                    </View>
+                    <TouchableOpacity style={[global.button, styles.dtBtn]} onPress={() => {showDetails(!inDetails)}}>
+                        <Text style={[global.text, styles.dtText]}>DETAILS</Text>
+                    </TouchableOpacity>
                 </View>
                 {inDetails && <EltDetails/>}
             </View>
