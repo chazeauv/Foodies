@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, useWindowDimensions } from 'react-native';
 import global from '../style/global';
 import { useState } from 'react';
