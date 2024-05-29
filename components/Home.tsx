@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useCallback } from "react";
+import React, { PropsWithChildren } from "react";
 import { StatusBar, View, Text, StyleSheet, Dimensions, Image, KeyboardAvoidingView, Platform, Alert, Linking, TouchableOpacity } from "react-native";
 import global from '../style/global';
 
@@ -30,7 +30,7 @@ const Home = ({navigation}: PropsWithChildren<any>) => {
 const OpenURLButton = ({url}: OpenURLButtonProps) => {
     const handlePress = async () => {
         const supported = await Linking.canOpenURL(url);
-        
+
         if (supported) {
             Linking.openURL(url);
         } else {
