@@ -1,1 +1,0 @@
-//TODO mettre tous les fetch importants ici
