@@ -1,10 +1,22 @@
-import { Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, useWindowDimensions } from 'react-native';
+import { Animated, Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, useWindowDimensions } from 'react-native';
 import global from '../style/global';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import EltDetails from './EltDetails';
 
 const ListElt = ({cktName}: {cktName: string}) => {
     let [inDetails, showDetails] = useState(false);
+
+    const fadeAnim = useRef(new Animated.Value(0)).current;
+
+    useEffect(() => {
+        if (inDetails) {
+            Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration: 1000,
+            useNativeDriver: true,
+            }).start();
+        }
+    }, [inDetails]);
 
     return (
         <View style={[global.card, styles.card]}>
@@ -12,11 +24,16 @@ const ListElt = ({cktName}: {cktName: string}) => {
                 <Image style={styles.img} source={ require('../assets/images/cocktailsBg.jpg') }/>
                 <View style={styles.desc}>
                     <Text style={styles.descText}>{cktName}</Text>
-                    <TouchableOpacity style={[global.button, styles.dtBtn]} onPress={() => {showDetails(!inDetails)}}>
+                    <TouchableOpacity style={[global.button, styles.dtBtn]} onPress={() => {showDetails(inDetails = !inDetails)}}>
                         <Text style={[global.text, styles.dtText]}>DETAILS</Text>
                     </TouchableOpacity>
                 </View>
-                {inDetails && <EltDetails/>}
+                {
+                    inDetails &&
+                    <Animated.View style={{opacity: fadeAnim}}>
+                        <EltDetails/>
+                    </Animated.View>
+                }
             </View>
         </View>
     )
