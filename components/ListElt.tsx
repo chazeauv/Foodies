@@ -2,8 +2,9 @@ import { Animated, Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpa
 import global from '../style/global';
 import { useEffect, useRef, useState } from 'react';
 import EltDetails from './EltDetails';
+import { Cocktail } from '../services/CocktailsDB';
 
-const ListElt = ({cktName}: {cktName: string}) => {
+const ListElt = ({ckt}: {ckt: Cocktail}) => {
     let [inDetails, showDetails] = useState(false);
 
     const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -18,12 +19,14 @@ const ListElt = ({cktName}: {cktName: string}) => {
         }
     }, [inDetails]);
 
+    const thumbUrl = ckt.strDrinkThumb ? ckt.strDrinkThumb : '../assets/DNF.jpg';
+
     return (
         <View style={[global.card, styles.card]}>
             <View style={[global.cardContent, styles.cardContent]}>
-                <Image style={styles.img} source={ require('../assets/images/cocktailsBg.jpg') }/>
+                <Image style={styles.img} source={{uri: thumbUrl}}/>
                 <View style={styles.desc}>
-                    <Text style={styles.descText}>{cktName}</Text>
+                    <Text style={styles.descText}>{ckt.strDrink}</Text>
                     <TouchableOpacity style={[global.button, styles.dtBtn]} onPress={() => {showDetails(inDetails = !inDetails)}}>
                         <Text style={[global.text, styles.dtText]}>DETAILS</Text>
                     </TouchableOpacity>
@@ -31,7 +34,7 @@ const ListElt = ({cktName}: {cktName: string}) => {
                 {
                     inDetails &&
                     <Animated.View style={{opacity: fadeAnim}}>
-                        <EltDetails/>
+                        <EltDetails ckt={ckt}/>
                     </Animated.View>
                 }
             </View>

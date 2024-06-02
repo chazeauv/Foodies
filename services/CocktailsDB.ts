@@ -31,7 +31,7 @@ export interface Cocktail {
 // Exportez la fonction fetchCocktails
 export const fetchCocktails = async (searchTerm: string): Promise<Cocktail[]> => {
   try {
-    const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${searchTerm}`);
+    const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`);
     const json = await response.json();
     return json.drinks || [];
   } catch (error) {

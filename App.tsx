@@ -15,7 +15,7 @@ const App = () => {
   const Stack = createNativeStackNavigator();
 
   return (
-    <ImageBackground blurRadius={0.5} style={styles.mainImg} source={require('./assets/images/cocktailsBg2.jpg')}>
+    <ImageBackground blurRadius={0} style={styles.mainImg} source={require('./assets/images/cocktailsBg4.jpg')}>
       <GradientTemplate headerPadding={true}>
       <NavigationContainer theme={navTheme}>
         <Stack.Navigator initialRouteName='Home'>
@@ -45,17 +45,5 @@ const styles = StyleSheet.create({
     opacity: 1,
   }
 });
-
-const config = {
-  animation: 'spring',
-  config: {
-      stiffness: 1000,
-      damping: 500,
-      mass: 3,
-      overshootClamping: true,
-      restDisplacementThreshold: 0.01,
-      restSpeedThreshold: 0.01,
-  },
-};
 
 export default App;

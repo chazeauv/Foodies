@@ -7,8 +7,9 @@ const width = dimensions.width;
 export default StyleSheet.create({
     mainTitleContainer: {
         position: 'absolute',
-        top: 300,
+        top: 128,
         justifyContent: 'center',
+        alignItems: 'center',
         width: Dimensions.get("window").width - 16,
     },
     mainTitle: {

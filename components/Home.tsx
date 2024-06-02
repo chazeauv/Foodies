@@ -7,7 +7,7 @@ const Home = ({navigation}: PropsWithChildren<any>) => {
 
     return (
             <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0} style={global.sectionContainer}>
-                <StatusBar barStyle="light-content"/>
+                <StatusBar barStyle="light-content" hidden/>
                 <View style={global.card}>
                     <View style={global.cardContent}>
                         <View style={global.mainTitleContainer}>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         marginTop: 8,
         fontSize: 18,
         fontWeight: '300',
-        color: '#cccccc',
+        color: '#fff',
     },
     buttons: {
         position: 'absolute',
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         elevation: 0,
     },
     gitImg: {
-        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
         borderRadius: 50,
         tintColor: '#7F00FF',
         height: 48,

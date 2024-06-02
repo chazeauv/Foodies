@@ -10,65 +10,64 @@ const CocktailsList = ({ cktName }: { cktName: string }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (!cktName.trim()) {
-      // Skip API call if cktName is empty
-      setLoading(false);
-      return;
+    useEffect(() => {
+        if (!cktName.trim()) {
+            setLoading(false);
+            return;
+        }
+
+        const loadCocktails = async () => {
+            try {
+                const fetchedCocktails = await fetchCocktails(cktName);
+                setCocktails(fetchedCocktails);
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        loadCocktails();
+    }, [cktName]);
+
+    if (loading) {
+        return (
+            <View style={styles.loadingContainer}>
+                <ActivityIndicator size="large" color="#0000ff" />
+            </View>
+        );
     }
 
-    const loadCocktails = async () => {
-      try {
-        const fetchedCocktails = await fetchCocktails(cktName);
-        setCocktails(fetchedCocktails);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+    if (error) {
+        return (
+            <View style={styles.errorContainer}>
+                <Text style={styles.errorText}>Erreur : {error}</Text>
+            </View>
+        );
+    }
 
-    loadCocktails();
-  }, [cktName]);
+    if (cocktails.length === 0) {
+        return (
+            <View style={styles.noResultsContainer}>
+                <Text style={styles.noResultsText}>Aucun résultat trouvé</Text>
+            </View>
+        );
+    }
 
-  if (loading) {
     return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#0000ff" />
-      </View>
+        <View style={[global.card, styles.card, styles.cardContent]}>
+            <View style={[global.cardContent, styles.cardContent]}>
+                <ScrollView style={styles.scrollView} stickyHeaderIndices={[0]}>
+                    <View style={styles.listDescContainer}>
+                        <Text style={styles.listDesc}>Résultats</Text>
+                    </View>
+                    {cocktails.map((cocktail) => (
+                        <ListElt key={cocktail.idDrink} ckt={cocktail} />
+                    ))}
+                </ScrollView>
+            </View>
+        </View>
     );
-  }
-
-  if (error) {
-    return (
-      <View style={styles.errorContainer}>
-        <Text style={styles.errorText}>Erreur : {error}</Text>
-      </View>
-    );
-  }
-
-  if (cocktails.length === 0) {
-    return (
-      <View style={styles.noResultsContainer}>
-        <Text style={styles.noResultsText}>Aucun résultat trouvé</Text>
-      </View>
-    );
-  }
-
-  return (
-    <View style={[global.card, styles.card, styles.cardContent]}>
-      <View style={[global.cardContent, styles.cardContent]}>
-        <ScrollView style={styles.scrollView} stickyHeaderIndices={[0]}>
-          <View style={styles.listDescContainer}>
-            <Text style={styles.listDesc}>Résultats</Text>
-          </View>
-          {cocktails.map((cocktail) => (
-            <ListElt key={cocktail.idDrink} cktName={cocktail.strDrink} />
-          ))}
-        </ScrollView>
-      </View>
-    </View>
-  );
 };
 
 const styles = StyleSheet.create({
