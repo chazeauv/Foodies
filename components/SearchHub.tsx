@@ -2,8 +2,7 @@ import React, { PropsWithChildren } from "react";
 import { StatusBar, View, Text, StyleSheet, Dimensions, Image, KeyboardAvoidingView, Platform, Alert, Linking, TouchableOpacity } from "react-native";
 import global from '../style/global';
 
-const Home = ({navigation}: PropsWithChildren<any>) => {
-    const gitUrl = 'https://github.com/chazeauv/Foodies';
+const SearchHub = ({navigation}: PropsWithChildren<any>) => {
 
     return (
             <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0} style={global.sectionContainer}>
@@ -13,40 +12,20 @@ const Home = ({navigation}: PropsWithChildren<any>) => {
                         <View style={global.mainTitleContainer}>
                             <Text style={global.mainTitle}>THE</Text>
                             <Text style={global.mainTitle}>MIXOLOGIST</Text>
-                            <Text style={styles.mainDesc}>Trouve un cocktail. Concocte-le.</Text>
+                            <Text style={styles.mainDesc}>Trouves un cocktail. Concocte-le.</Text>
                         </View>
                         <View style={styles.buttons}>
-                            <TouchableOpacity style={[global.button, styles.ctBtn]} onPress={() => navigation.navigate("SEARCHHUB")}>
-                                <Text style={[global.text, styles.ctTxt]}>C'EST PARTI</Text>
+                            <TouchableOpacity style={[global.button, styles.ctBtn]} onPress={() => navigation.navigate("COCKTAILS", {searchMode: "nom"})}>
+                                <Text style={[global.text, styles.ctTxt]}>NOM</Text>
                             </TouchableOpacity>
-                            <OpenURLButton url={gitUrl}/>
+                            <TouchableOpacity style={[global.button, styles.ctBtn]} onPress={() => navigation.navigate("COCKTAILS", {searchMode: "random"})}>
+                                <Text style={[global.text, styles.ctTxt]}>ALEATOIRE</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>
             </KeyboardAvoidingView>
     );
-};
-
-const OpenURLButton = ({url}: OpenURLButtonProps) => {
-    const handlePress = async () => {
-        const supported = await Linking.canOpenURL(url);
-
-        if (supported) {
-            Linking.openURL(url);
-        } else {
-            Alert.alert('Impossible d\'ouvrir le lien');
-        }
-    };
-
-    return (
-        <TouchableOpacity style={[global.button, styles.gitBtn]} onPress={handlePress}>
-            <Image style={styles.gitImg} source={ require('../assets/images/gitLogo.png') }/>
-        </TouchableOpacity>
-    );
-};
-
-type OpenURLButtonProps = {
-    url: string;
 };
 
 const styles = StyleSheet.create({
@@ -59,12 +38,13 @@ const styles = StyleSheet.create({
     },
     buttons: {
         position: 'absolute',
-        bottom: 10,
+        bottom: 20,
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         width: Dimensions.get("window").width - 16,
+        gap: 8,
     },
     ctBtn: {
         backgroundColor: 'white',
@@ -72,18 +52,7 @@ const styles = StyleSheet.create({
     },
     ctTxt: {
         color: 'black',
-    },
-    gitBtn: {
-        flex: 1,
-        elevation: 0,
-    },
-    gitImg: {
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        borderRadius: 50,
-        tintColor: '#7F00FF',
-        height: 48,
-        width: 48,
     }
 });
 
-export default Home;
+export default SearchHub;

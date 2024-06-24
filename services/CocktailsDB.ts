@@ -12,6 +12,7 @@ export interface Cocktail {
   strGlass?: string;
   strInstructions?: string;
   strDrinkThumb?: string;
+  strAlcoholic?: string;
   strIngredient1?: string;
   strIngredient2?: string;
   strIngredient3?: string;
@@ -28,6 +29,15 @@ export interface Cocktail {
   dateModified?: string;
 }
 
+export interface Ingredient {
+  idIngredient: string;
+  strIngredient?: string;
+  strDescription?: string;
+  strType?: string;
+  strAlcohol?: string;
+  strABV?: string;
+}
+
 // Exportez la fonction fetchCocktails
 export const fetchCocktails = async (searchTerm: string): Promise<Cocktail[]> => {
   try {
@@ -38,3 +48,13 @@ export const fetchCocktails = async (searchTerm: string): Promise<Cocktail[]> =>
     throw new Error('Failed to fetch cocktails');
   }
 };
+
+export const fetchRandom = async (searchTerm: string): Promise<Cocktail[]> => {
+  try {
+    const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`);
+    const json = await response.json();
+    return json.drinks || [];
+  } catch (error) {
+    throw new Error('Failed to fetch cocktails');
+  }
+}

@@ -10,6 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './components/Home';
 import Cocktails from './components/Cocktails';
 import GradientTemplate from './style/GradientTemplate';
+import SearchHub from './components/SearchHub';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -21,6 +22,7 @@ const App = () => {
         <Stack.Navigator initialRouteName='Home'>
           <Stack.Screen name="HOME" component={Home} options={{ title: '', headerTransparent: true, headerTintColor: '#fff', animation: 'ios' }} />
           <Stack.Screen name="COCKTAILS" component={Cocktails} options={{ title: '', headerTransparent: true, headerTintColor: '#fff', animation: 'ios' }} />
+          <Stack.Screen name="SEARCHHUB" component={SearchHub} options={{ title: '', headerTransparent: true, headerTintColor: '#fff', animation: 'ios' }} />
         </Stack.Navigator>
       </NavigationContainer>
       </GradientTemplate>

@@ -2,9 +2,14 @@ import { Animated, Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpa
 import global from '../style/global';
 import { useEffect, useRef, useState } from 'react';
 import EltDetails from './EltDetails';
-import { Cocktail } from '../services/CocktailsDB';
+import { Cocktail, Ingredient } from '../services/CocktailsDB';
 
-const ListElt = ({ckt}: {ckt: Cocktail}) => {
+interface ListEltProps {
+    elt: Cocktail;
+    type: string;
+}
+
+const ListElt = ({listEltProps}: {listEltProps: ListEltProps}) => {
     let [inDetails, showDetails] = useState(false);
 
     const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -19,14 +24,16 @@ const ListElt = ({ckt}: {ckt: Cocktail}) => {
         }
     }, [inDetails]);
 
-    const thumbUrl = ckt.strDrinkThumb ? ckt.strDrinkThumb : '../assets/DNF.jpg';
+    const cocktail = listEltProps.elt as Cocktail;
+    const thumbUrl = cocktail.strDrinkThumb ? cocktail.strDrinkThumb : '../assets/DNF.jpg';
+    console.log("thumbUrl: " + thumbUrl);
 
     return (
         <View style={[global.card, styles.card]}>
             <View style={[global.cardContent, styles.cardContent]}>
                 <Image style={styles.img} source={{uri: thumbUrl}}/>
                 <View style={styles.desc}>
-                    <Text style={styles.descText}>{ckt.strDrink}</Text>
+                    <Text style={styles.descText}>{cocktail.strDrink}</Text>
                     <TouchableOpacity style={[global.button, styles.dtBtn]} onPress={() => {showDetails(inDetails = !inDetails)}}>
                         <Text style={[global.text, styles.dtText]}>DETAILS</Text>
                     </TouchableOpacity>
@@ -34,33 +41,33 @@ const ListElt = ({ckt}: {ckt: Cocktail}) => {
                 {
                     inDetails &&
                     <Animated.View style={{opacity: fadeAnim}}>
-                        <EltDetails ckt={ckt}/>
+                        <EltDetails elt={cocktail}/>
                     </Animated.View>
                 }
             </View>
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
     card: {
         width: 'auto',
-        flex: 1,
         height: 'auto',
         borderWidth: 1,
         borderColor: '#cccccc',
         marginBottom: 16,
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        flex: 1,
     },
     cardContent : {
-        padding: 16,
+        padding: 0,
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
         gap: 16,
     },
     img: {
         width: '100%',
-        height: 128,
+        height: 200,
         borderRadius: 20,
         borderWidth: 1,
         borderColor: '#cccccc'
@@ -69,11 +76,15 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        gap: 16
+        gap: 16,
+        marginBottom: 16,
+        marginLeft: 16,
     },
     dtBtn: {
         backgroundColor: 'orange',
         flex : 1,
+        marginBottom: 16,
+        marginRight: 16,
     },
     dtText: {
         fontSize: 14,

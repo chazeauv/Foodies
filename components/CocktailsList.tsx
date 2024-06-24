@@ -3,23 +3,38 @@ import { Dimensions, ScrollView, StyleSheet, Text, View, ActivityIndicator } fro
 import global from '../style/global';
 import ListElt from './ListElt';
 import React, { useEffect, useState } from 'react';
-import { fetchCocktails, Cocktail } from '../services/CocktailsDB';
+import { fetchCocktails, Cocktail, fetchRandom } from '../services/CocktailsDB';
 
-const CocktailsList = ({ cktName }: { cktName: string }) => {
+interface CocktailsListProps {
+  cktListProps: string[]; 
+}
+
+interface ListEltProps {
+  elt: Cocktail;
+  type: string;
+}
+
+const CocktailsList = ( { cktListProps }: CocktailsListProps ) => {
   const [cocktails, setCocktails] = useState<Cocktail[]>([]);
+  const [random, setRandom] = useState<Cocktail[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        if (!cktName.trim()) {
+        if (!cktListProps[0].trim()) {
             setLoading(false);
             return;
         }
 
-        const loadCocktails = async () => {
+        const loadElts = async () => {
             try {
-                const fetchedCocktails = await fetchCocktails(cktName);
-                setCocktails(fetchedCocktails);
+                if(cktListProps[1] === "nom") {
+                  const fetchedCocktails = await fetchCocktails(cktListProps[0]);
+                  setCocktails(fetchedCocktails);
+                } else {
+                  const fetchedRandom = await fetchRandom(cktListProps[0]);
+                  setRandom(fetchedRandom);
+                }
             } catch (err) {
                 setError(err.message);
             } finally {
@@ -27,8 +42,8 @@ const CocktailsList = ({ cktName }: { cktName: string }) => {
             }
         };
 
-        loadCocktails();
-    }, [cktName]);
+        loadElts();
+    }, [cktListProps[0]]);
 
     if (loading) {
         return (
@@ -46,7 +61,7 @@ const CocktailsList = ({ cktName }: { cktName: string }) => {
         );
     }
 
-    if (cocktails.length === 0) {
+    if (cktListProps[1] === "nom" && cocktails.length === 0) {
         return (
             <View style={styles.noResultsContainer}>
                 <Text style={styles.noResultsText}>Aucun résultat trouvé</Text>
@@ -54,30 +69,51 @@ const CocktailsList = ({ cktName }: { cktName: string }) => {
         );
     }
 
-    return (
+    if (cktListProps[1] === 'ing' && random.length === 0) {
+      return (
+        <View style={styles.noResultsContainer}>
+            <Text style={styles.noResultsText}>Aucun résultat trouvé</Text>
+        </View>
+      );
+    }
+
+    let listEltProps: ListEltProps;
+
+      return (
         <View style={[global.card, styles.card, styles.cardContent]}>
+        {cktListProps[1] === "nom" && 
             <View style={[global.cardContent, styles.cardContent]}>
                 <ScrollView style={styles.scrollView} stickyHeaderIndices={[0]}>
                     <View style={styles.listDescContainer}>
                         <Text style={styles.listDesc}>Résultats</Text>
                     </View>
                     {cocktails.map((cocktail) => (
-                        <ListElt key={cocktail.idDrink} ckt={cocktail} />
+                      listEltProps = {elt: cocktail, type: cktListProps[1]},
+                        <ListElt key={cocktail.idDrink} listEltProps={listEltProps} />
                     ))}
                 </ScrollView>
-            </View>
+            </View>}
+        {cktListProps[1] === "random" &&
+            <View style={[global.cardContent, styles.cardContent]}>
+              <ScrollView style={styles.scrollView} stickyHeaderIndices={[0]}>
+                    {random.map((cocktail) => (
+                        listEltProps = {elt: cocktail, type: cktListProps[1]},
+                        <ListElt key={cocktail.idDrink} listEltProps={listEltProps} />
+                    ))}
+              </ScrollView>
+            </View>}
         </View>
-    );
+      );
 };
 
 const styles = StyleSheet.create({
   cardContent: {
         flex: 1,
+        backgroundColor: 'white',
    },
   card: {
     width: Dimensions.get('window').width - 16,
     paddingTop: 10,
-    backgroundColor: 'white',
     flex: 1,
   },
   scrollView: {
@@ -115,7 +151,7 @@ const styles = StyleSheet.create({
   noResultsText: {
     fontSize: 16,
     color: 'gray',
-  },
+  }
 });
 
 export default CocktailsList;

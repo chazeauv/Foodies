@@ -1,31 +1,32 @@
 import { Text, View } from 'react-native';
 import global from '../style/global';
-import { Cocktail } from '../services/CocktailsDB';
+import { Cocktail, Ingredient } from '../services/CocktailsDB';
 
-const EltDetails = ({ckt}: {ckt: Cocktail}) =>{
+const EltDetails = ({elt}: {elt: Cocktail}) =>{
+        const cocktail = elt as Cocktail;
+        const verre = cocktail.strGlass;
+        const instructionsTab = cocktail.strInstructions?.split('.');
+        const instructions = instructionsTab!.map((instruction, index) => {
+            return (
+                <Text key={index}>{instruction} {index != (instructionsTab!.length - 1) && "\n"}</Text>
+            );
+        });
+        const ingredientsTab = [cocktail.strIngredient1, cocktail.strIngredient2, cocktail.strIngredient3, cocktail.strIngredient4, cocktail.strIngredient5];
+        const ingredients = ingredientsTab.map((ingredient, index) => {
+            return (
+                <Text key={index}>{ingredient}</Text>
+            );
+        });
+        const alcoolisee = cocktail.strAlcoholic;
 
-    const verre = ckt.strGlass;
-    const instructionsTab = ckt.strInstructions?.split('.');
-    const instructions = instructionsTab!.map((instruction, index) => {
         return (
-            <Text key={index}>{instruction} {index != (instructionsTab!.length - 1) && "\n"}</Text>
+            <View>
+                <Text>Alcoolisé: {alcoolisee}</Text>
+                <Text>Composition: {ingredients}</Text>
+                <Text>Instructions: {instructions}</Text>
+                <Text>Verre recommandé: {verre}</Text>
+            </View>
         );
-    });
-    const ingredientsTab = [ckt.strIngredient1, ckt.strIngredient2, ckt.strIngredient3, ckt.strIngredient4, ckt.strIngredient5];
-    const ingredients = ingredientsTab.map((ingredient, index) => {
-        return (
-            <Text key={index}>{ingredient}</Text>
-        );
-    });
-
-    return (
-        <View>
-            <Text>Alcoolisé: I/O</Text>
-            <Text>Composition: {ingredients}</Text>
-            <Text>Instructions: {instructions}</Text>
-            <Text>Verre recommandé: {verre}</Text>
-        </View>
-    );
 }
 
 export default EltDetails;
