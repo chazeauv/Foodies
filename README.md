@@ -1,3 +1,12 @@
+# Table des matières
+- [Description](#description)
+- [Installation](#installation)
+- [(EN) ~~Foodies~~ The Mixologist - a React Native project](#(EN)_~~Foodies~~_the_mixologist_-_a_react_native_project)
+- [(FR) ~~Foodies~~ The Mixologist - un projet React Native](#(FR)_~~Foodies~~_the_mixologist_-_un_projet_react_native)
+- [Tech Stack](#tech_stack)
+- [Collaborateurs/collaborators](#collaborateurs/collaborators)
+
+
 # Description
 ## (EN) ~~Foodies~~ The Mixologist - a React Native project
 
@@ -16,6 +25,14 @@ Ce projet porte sur  la création d'une petite application mobile.
 Utilisant [TheCocktailDB API](https://www.thecocktaildb.com/api.php), le but est d'aider l'utilisateur à trouver des idées de cocktails et comment les concocter.
 
 Projet réalisé dans le cadre du Master 1 MIAGE, UFR IM2AG, Université Grenoble Alpes.
+
+# Installation
+
+
+- Assurez-vous d'avoir Maven installé sur votre système, la procédure est décrite [ici](https://maven.apache.org/install.html).
+- Importez le projet vers votre IDE préféré.
+- Dans un terminal, lancez la commande `mvn clean install` afin de construire le projet et d'installer les dépendances.
+- Et enfin, lancez le projet (fichier App.java).
 
 # Tech Stack
 
