@@ -29,10 +29,19 @@ Projet réalisé dans le cadre du Master 1 MIAGE, UFR IM2AG, Université Grenobl
 # Installation
 
 
-- Assurez-vous d'avoir Maven installé sur votre système, la procédure est décrite [ici](https://maven.apache.org/install.html).
+- Assurez-vous d'avoir React Native d'installé sur votre système.
 - Importez le projet vers votre IDE préféré.
-- Dans un terminal, lancez la commande `mvn clean install` afin de construire le projet et d'installer les dépendances.
-- Et enfin, lancez le projet (fichier App.java).
+- Dans un terminal, exécutez les commandes : 
+  - `npm install @react-navigation/native-stack`
+  - `npm install @react-native/metro-config`
+  - `npm install react-native-screens react-native-safe-area-context`
+  - `npm install react-navigation/native`
+  - `npx expo install expo-linear-gradient`
+  - `npx install-expo-modules@latest`
+  - `yes`
+  - `yes`
+- Brancher votre téléphone android
+- Et enfin, lancez la commande `npx react-native start` puis sélectionner l'option `n`.
 
 # Tech Stack
 
