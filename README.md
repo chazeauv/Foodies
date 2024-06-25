@@ -3,7 +3,7 @@
 - [Installation](#installation)
 - [(EN) ~~Foodies~~ The Mixologist - a React Native project](#(EN)_~~Foodies~~_the_mixologist_-_a_react_native_project)
 - [(FR) ~~Foodies~~ The Mixologist - un projet React Native](#(FR)_~~Foodies~~_the_mixologist_-_un_projet_react_native)
-- [Tech Stack](#tech_stack)
+- [Tech Stack](#tech_Stack)
 - [Collaborateurs/collaborators](#collaborateurs/collaborators)
 
 
