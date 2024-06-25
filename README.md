@@ -28,6 +28,18 @@ Projet réalisé dans le cadre du Master 1 MIAGE, UFR IM2AG, Université Grenobl
 
 # Installation
 
+- Import the project into your preferred IDE.
+- In a terminal, execute the following commands:
+  - `npm install @react-navigation/native-stack`
+  - `npm install @react-native/metro-config`
+  - `npm install react-native-screens react-native-safe-area-context`
+  - `npm install react-navigation/native`
+  - `npx expo install expo-linear-gradient`
+  - `npx install-expo-modules@latest`
+    - `yes`
+    - `yes`
+- Connect your Android phone.
+- Finally, run the command npx `react-native` start and select option `n`.
 
 - Assurez-vous d'avoir React Native d'installé sur votre système.
 - Importez le projet vers votre IDE préféré.
@@ -38,10 +50,10 @@ Projet réalisé dans le cadre du Master 1 MIAGE, UFR IM2AG, Université Grenobl
   - `npm install react-navigation/native`
   - `npx expo install expo-linear-gradient`
   - `npx install-expo-modules@latest`
-  - `yes`
-  - `yes`
-- Brancher votre téléphone android
-- Et enfin, lancez la commande `npx react-native start` puis sélectionner l'option `n`.
+    - `yes`
+    - `yes`
+- Brancher votre téléphone android.
+- Et enfin, lancez la commande `npx react-native start` puis sélectionner l'option `a`.
 
 # Tech Stack
 
