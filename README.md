@@ -53,6 +53,7 @@ ENGLISH VERSION :
 - Connect your Android phone.
 - Finally, run the command npx `npx react-native start` start and select option `a`.
 
+:warning: When clicking on the GitHub button, the link might not work if your default navigator is not Chrome !
 
 VERSION FRANCAISE : 
 
@@ -70,6 +71,8 @@ VERSION FRANCAISE :
     - `yes`
 - Brancher votre téléphone android.
 - Et enfin, lancez la commande `npx react-native start` puis sélectionner l'option `a`.
+
+:warning: En cliquant sur le bouton GitHub, l'ouverture du navigateur peut fail, il est nécessaire d'avoir Chrome en navigateur par défaut !
 
 # Tech Stack
 
