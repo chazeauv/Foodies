@@ -55,6 +55,7 @@ ENGLISH VERSION :
 
 :warning: When clicking on the GitHub button, the link might not work if your default navigator is not Chrome !
 
+
 VERSION FRANCAISE : 
 
 
