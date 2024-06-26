@@ -15,6 +15,11 @@ Hello !
 This project is about creating a small smartphone application.
 Using [TheCocktailDB API](https://www.thecocktaildb.com/api.php), the goal is to help the user search for cocktail ideas, and how to concoct them.
 
+Here is the translation into English:
+
+The main features of this application are the ability to search for cocktail ideas, either by name or randomly! 
+A "detail" section will provide you with all the necessary informations for making the cocktail (if cokctail use alcohols or not, the alcohols to use, the instructions, and the glass to use).
+
 Project realized in the context of 1st year of MIAGE Master degree, IM2AG, Grenoble Alpes University.
 
 ## (FR) ~~Foodies~~ The Mixologist - un projet React Native
@@ -23,6 +28,9 @@ Bonjour !
 
 Ce projet porte sur  la création d'une petite application mobile.
 Utilisant [TheCocktailDB API](https://www.thecocktaildb.com/api.php), le but est d'aider l'utilisateur à trouver des idées de cocktails et comment les concocter.
+
+Les principales fonctionnalités de cette application sont de pouvoir rechercher des idées de cocktail, que ce soit par nom, ou bien de façon aléatoire !
+Un volet "détail" vous donnera toutes les informations nécéssaire à sa réalisation (s'il s'agit d'un cokctail alcoolisé ou non, les alcools à utiliser, les instructions et le verre à utiliser)
 
 Projet réalisé dans le cadre du Master 1 MIAGE, UFR IM2AG, Université Grenoble Alpes.
 
