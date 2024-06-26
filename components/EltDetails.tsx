@@ -20,12 +20,12 @@ const EltDetails = ({elt}: {elt: Cocktail}) =>{
         const alcoolisee = cocktail.strAlcoholic;
 
         return (
-            <ScrollView>
-                <Text>Alcoolisé: {alcoolisee}</Text>
-                <Text>Composition: {ingredients}</Text>
-                <Text>Instructions: {instructions}</Text>
-                <Text>Verre recommandé: {verre}</Text>
-            </ScrollView>
+            <View>
+                    <Text>Alcoolisé: {alcoolisee}</Text>
+                    <Text>Composition: {ingredients}</Text>
+                    <Text>Instructions: {instructions}</Text>
+                    <Text>Verre recommandé: {verre}</Text>
+            </View>
         );
 }
 

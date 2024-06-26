@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
     dtBtn: {
         backgroundColor: 'orange',
         flex : 1,
-        marginBottom: 16,
         marginRight: 16,
     },
     dtText: {

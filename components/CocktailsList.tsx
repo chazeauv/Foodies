@@ -96,6 +96,9 @@ const CocktailsList = ( { cktListProps }: CocktailsListProps ) => {
         {cktListProps[1] === "random" &&
             <View style={[global.cardContent, styles.cardContent]}>
               <ScrollView style={styles.scrollView} stickyHeaderIndices={[0]}>
+                    <View style={styles.listDescContainer}>
+                        <Text style={styles.listDesc}></Text>
+                    </View>
                     {random.map((cocktail) => (
                         listEltProps = {elt: cocktail, type: cktListProps[1]},
                         <ListElt key={cocktail.idDrink} listEltProps={listEltProps} />
