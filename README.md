@@ -1,3 +1,12 @@
+# Table des matières
+- [Description](#description)
+- [Installation](#installation)
+- [(EN) ~~Foodies~~ The Mixologist - a React Native project](#(EN)_~~Foodies~~_the_mixologist_-_a_react_native_project)
+- [(FR) ~~Foodies~~ The Mixologist - un projet React Native](#(FR)_~~Foodies~~_the_mixologist_-_un_projet_react_native)
+- [Tech Stack](#tech_Stack)
+- [Collaborateurs/collaborators](#collaborateurs/collaborators)
+
+
 # Description
 ## (EN) ~~Foodies~~ The Mixologist - a React Native project
 
@@ -5,6 +14,11 @@ Hello !
 
 This project is about creating a small smartphone application.
 Using [TheCocktailDB API](https://www.thecocktaildb.com/api.php), the goal is to help the user search for cocktail ideas, and how to concoct them.
+
+Here is the translation into English:
+
+The main features of this application are the ability to search for cocktail ideas, either by name or randomly! 
+A "detail" section will provide you with all the necessary informations for making the cocktail (if cokctail use alcohols or not, the alcohols to use, the instructions, and the glass to use).
 
 Project realized in the context of 1st year of MIAGE Master degree, IM2AG, Grenoble Alpes University.
 
@@ -15,7 +29,47 @@ Bonjour !
 Ce projet porte sur  la création d'une petite application mobile.
 Utilisant [TheCocktailDB API](https://www.thecocktaildb.com/api.php), le but est d'aider l'utilisateur à trouver des idées de cocktails et comment les concocter.
 
+Les principales fonctionnalités de cette application sont de pouvoir rechercher des idées de cocktail, que ce soit par nom, ou bien de façon aléatoire !
+Un volet "détail" vous donnera toutes les informations nécéssaire à sa réalisation (s'il s'agit d'un cokctail alcoolisé ou non, les alcools à utiliser, les instructions et le verre à utiliser)
+
 Projet réalisé dans le cadre du Master 1 MIAGE, UFR IM2AG, Université Grenoble Alpes.
+
+# Installation
+
+
+ENGLISH VERSION : 
+
+
+- Import the project into your best IDE.
+- In a terminal, execute the following commands:
+  - `npm install @react-navigation/native-stack`
+  - `npm install @react-native/metro-config`
+  - `npm install react-native-screens react-native-safe-area-context`
+  - `npm install react-navigation/native`
+  - `npx expo install expo-linear-gradient`
+  - `npx install-expo-modules@latest`
+    - `yes`
+    - `yes`
+- Connect your Android phone.
+- Finally, run the command npx `npx react-native start` start and select option `a`.
+
+
+VERSION FRANCAISE : 
+
+
+- Assurez-vous d'avoir React Native d'installé sur votre système.
+- Importez le projet vers votre IDE préféré.
+- Dans un terminal, exécutez les commandes : 
+  - `npm install @react-navigation/native-stack`
+  - `npm install @react-native/metro-config`
+  - `npm install react-native-screens react-native-safe-area-context`
+  - `npm install react-navigation/native`
+  - `npx expo install expo-linear-gradient`
+  - `npx install-expo-modules@latest`
+    - `yes`
+    - `yes`
+- Brancher votre téléphone android.
+- Et enfin, lancez la commande `npx react-native start` puis sélectionner l'option `a`.
 
 # Tech Stack
 
