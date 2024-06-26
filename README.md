@@ -28,6 +28,10 @@ Projet réalisé dans le cadre du Master 1 MIAGE, UFR IM2AG, Université Grenobl
 
 # Installation
 
+
+ENGLISH VERSION : 
+
+
 - Import the project into your preferred IDE.
 - In a terminal, execute the following commands:
   - `npm install @react-navigation/native-stack`
@@ -40,6 +44,10 @@ Projet réalisé dans le cadre du Master 1 MIAGE, UFR IM2AG, Université Grenobl
     - `yes`
 - Connect your Android phone.
 - Finally, run the command npx `react-native` start and select option `n`.
+
+
+VERSION FRANCAISE : 
+
 
 - Assurez-vous d'avoir React Native d'installé sur votre système.
 - Importez le projet vers votre IDE préféré.
