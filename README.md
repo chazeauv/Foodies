@@ -32,7 +32,7 @@ Projet réalisé dans le cadre du Master 1 MIAGE, UFR IM2AG, Université Grenobl
 ENGLISH VERSION : 
 
 
-- Import the project into your preferred IDE.
+- Import the project into your best IDE.
 - In a terminal, execute the following commands:
   - `npm install @react-navigation/native-stack`
   - `npm install @react-native/metro-config`
@@ -43,7 +43,7 @@ ENGLISH VERSION :
     - `yes`
     - `yes`
 - Connect your Android phone.
-- Finally, run the command npx `react-native` start and select option `n`.
+- Finally, run the command npx `npx react-native start` start and select option `a`.
 
 
 VERSION FRANCAISE : 
