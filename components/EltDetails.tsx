@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import global from '../style/global';
 import { Cocktail, Ingredient } from '../services/CocktailsDB';
 
@@ -20,12 +20,12 @@ const EltDetails = ({elt}: {elt: Cocktail}) =>{
         const alcoolisee = cocktail.strAlcoholic;
 
         return (
-            <View>
+            <ScrollView>
                 <Text>Alcoolisé: {alcoolisee}</Text>
                 <Text>Composition: {ingredients}</Text>
                 <Text>Instructions: {instructions}</Text>
                 <Text>Verre recommandé: {verre}</Text>
-            </View>
+            </ScrollView>
         );
 }
 

@@ -40,7 +40,7 @@ const ListElt = ({listEltProps}: {listEltProps: ListEltProps}) => {
                 </View>
                 {
                     inDetails &&
-                    <Animated.View style={{opacity: fadeAnim}}>
+                    <Animated.View style={{opacity: fadeAnim, paddingBottom: 10, paddingHorizontal: 10}}>
                         <EltDetails elt={cocktail}/>
                     </Animated.View>
                 }
